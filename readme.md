@@ -40,3 +40,9 @@ FOO
 
 You can notice `a` above `GPOST`. It is hexadecimal representation of 10. But wait... why? Okay.. lets count: `GPOST (5 chars)` + `newline (1 char)` + `FOO (3 chars)` + `newline (1 char)`!!! Lesson to learn: Multiline chunked requests need additional ending newline to be included in your size calculation otherwise request will be invalid!
 
+## NEWLINES
+
+Beware of newlines - BurpSuite represents them as 2 characters - `\r\n` (a newline with carriage return). As shown above - It looks like sometimes request can use only simple newline without carriage return!!! 
+
+Investigate this...
+
