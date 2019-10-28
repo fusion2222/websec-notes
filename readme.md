@@ -43,4 +43,14 @@ Content-Length: 251
 0
 ```
 
-Request contains subsequent request, merged together. Wierd thing is, that it did not fail, because of double headers. TODO: Investigate.
+Request contains subsequent request, merged together. Wierd thing is, that it did not fail, because of double headers. **TODO: Investigate.**
+
+## Interesting headers
+
+Different curious headers are connected to cache poisoning. (They may be coming from underlying frameworks, etc.).
+
+- [Location](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Location)
+- [X-Forwarded-Host](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Forwarded-Host)
+- X-Forwarded-Scheme
+- `X-Original-URL` - Coming from underlying ZEND framework (PHP Symphony is built upon this)
+- The rest of `X-Forwarded ...` request headers.
